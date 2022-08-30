@@ -2,13 +2,13 @@
 <h2>Enter New Recipe</h2>
 <form id='add-recipe' action="/recipes" method="POST">
     <label for="rtitle">Title:</label><br>
-        <input type="text" id="rtitle" name="rtitle" value=""><br>
+        <input type="text" id="rtitle" name="title" value=""><br>
     <label for="ringredients">Ingredients:</label><br>
-        <input type="text" id="ringredients" name="ringredients" value=""><br>
+        <input type="text" id="ringredients" name="ingredients" value=""><br>
     <label for="rinstructions">Instructions:</label><br>
-        <input type="text" id="rinstructions" name="rinstructions" value=""><br>
+        <input type="text" id="rinstructions" name="instructions" value=""><br>
     <label for="rcomments">Comments:</label><br>
-        <input type="text" id="rcomments" name="rcomments" value=""><br>
+        <input type="text" id="rcomments" name="comments" value=""><br>
     <input type="submit" value="Save Recipe">
 </form>
 <%- include('../partials/footer')%>

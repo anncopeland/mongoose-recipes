@@ -16,6 +16,6 @@ router.get('/:id', recipesCtrl.show);
 
 // POST /recipes
 router.post('/', recipesCtrl.createRecipe);
-router.delete('/:id', recipesCtrl.deleteRecipe);
+//router.delete('/:id', recipesCtrl.deleteRecipe);
 
 module.exports = router;

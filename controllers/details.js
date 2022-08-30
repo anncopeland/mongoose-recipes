@@ -1,14 +1,14 @@
 const Recipe = require('../models/recipe');
-
+/*
 function showDetails(req, res) {
   Recipe.findById(req.params.id, function(err, recipe){
      res.render('recipe/show', { recipe });
  })
 }
-
+*/
 function recipeDetails(req, res) {
     Recipe.findById(req.params.id, function(error, recipe){
-        recipe.destinations.push(req.body);
+        recipe.destails.push(req.body);
         recipe.save(function(error){
             // res.render('recipes/show', { recipes })
             res.redirect(`/recipes/${recipe._id}`);
@@ -16,8 +16,7 @@ function recipeDetails(req, res) {
      })
  }
 
-
 module.exports = {
-    showDetails,
+    //showDetails,
     recipeDetails,
 }

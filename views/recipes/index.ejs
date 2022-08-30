@@ -1,11 +1,13 @@
 <%- include('../partials/header')%>
-<h1>Your Recipes</h1>
-<table>
+<h1>Your Recipe Collection</h1>
+<table id="collection">
     <thead>
-    <th>Title</th>
-    <th>Ingredients</th>
-    <th>Instructions</th>
-    <th>Comments</th>
+        <tr>
+            <th>Title</th>
+            <th>Ingredients</th>
+            <th>Instructions</th>
+            <th>Comments</th>
+        </tr>
     </thead>
     <tbody>
     <% recipes.forEach(recipe => { %>
@@ -14,11 +16,10 @@
             <td><%= recipe.ingredients %></td>
             <td><%= recipe.instructions %></td>
             <td><%= recipe.comments %></td>
-            <td><form action='/recipes/<%= recipe.id %>' method='POST>
-                <button type='submit'>DELETE</form>button</form></td>
-                <td><a href="/recipes/<%=recipe.id%>">DETAILS</a></td>
+            <td><a href="/recipes/<%=recipe.id%>">DELETE</a></td>
+            <td><a href="/recipes/<%=recipe.id%>">DETAILS</a></td>
         </tr>
-    <% }) %>
+    <% }); %>
     </tbody>
 </table>
 <%- include('../partials/footer')%>
