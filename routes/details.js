@@ -6,7 +6,7 @@ const detailsCtrl = require('../controllers/details')
 
 // POST /recipes/details
 // http://localhost:3000/recipes/details
-//router.post('/recipes/:id/details', detailsCtrl.recipeDetails);
+router.post('/recipes/:id/details', detailsCtrl.recipeDetails);
 //router.delete('/details/:id', detailsCtrl.delete);
 
 module.exports = router;

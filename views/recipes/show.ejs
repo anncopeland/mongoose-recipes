@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
-<h2>Recipe Details</h2>
-<section class='recipe-details'>
+
+<section id='show-page'>
     <div>Title:</div>
     <div><%= detail.title %></div>
     <div>Ingredients:</div>
@@ -10,60 +10,21 @@
     <div>Commments:</div>
     <div><%= detail.comments %></div>
 </section>
-</br>     
-<% if (detail.recipes.length) { %>
-    <table>
-        <thead>
-            <th>Title</th>
-        </thead>
-        <tbody>
-            <% detail.titles.forEach(function(recipe) {%>
-                <td><%= recipe.ingredients %></td>
-                <td><%= recipe.instructions %></td>
-                <td><%= recipe.comments %></td>
-              <% }); %>  
-        </tbody>
-    </table>
-    <% } else { %>
-        <h5> No Comment! </h5>
-    <% } %> 
+<br><br>
 
-    </br>
+<h2>Comments</h2>
+    <form>
+        <label>Comments:</label>
+        <textarea name="content"></textarea>
+        <label>Rating:</label>
+        <select name="rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <input type="submit" value="Add Comment">
+    </form>
 
-<h3>Add To Collection</h3>
-<form id="add-comments-form" method="POST" 
-action="/recipes/<%= detail._id %>/details" >
-    <label for="rtitle">Title:</label><br>
-        <input type="text" id="rtitle" name="rtitle" value=""><br>
-    <label for="ringredients">Ingredients:</label><br>
-        <input type="text" id="ringredients" name="ringredients" value=""><br>
-    <label for="rinstructions">Instructions:</label><br>
-        <input type="text" id="rinstructions" name="rinstructions" value=""><br>
-    <label for="rcomments">Comments:</label><br>
-        <input type="text" id="rcomments" name="rcomments" value=""><br>
-    <input type="submit" value="Update Recipe">
-</form>
-
-<% if (recipes.length) { %>
-    <table>
-        <thead>
-            <th>Title</th>
-            <th>Ingredients</th>
-            <th>Instructions</th>
-        </thead>
-        </table>
-    </br>
-        <tbody>
-            <%recipes.forEach(function(r) {%>
-                <td><%= r.title %></td>
-                <td><%= r.ingredients %></td>
-                <% }); %>
-            </br>
-        </tbody>
-    </table>
-    <% } elswe { %>
-        <h5> No New Recipes Created!</h5>
-    <% } %>
-
-<a href="/recipes/<%= detail._id %>/recipes/new">New Recipe</a>
 <%- include('../partials/footer')%>

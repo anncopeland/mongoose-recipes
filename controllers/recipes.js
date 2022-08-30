@@ -40,7 +40,6 @@ function deleteRecipe(req, res) {
     });
 }
 
-
 module.exports = {
     recipesIndex,
     newRecipe,
