@@ -26,8 +26,8 @@ function deleteComment(req, res, next) {
             res.redirect(`/recipes/${recipe._id}`);
         }).catch(function (error) {
             return next(error);
-        })
-    })
+        });
+    });
 }
   
 module.exports = {
