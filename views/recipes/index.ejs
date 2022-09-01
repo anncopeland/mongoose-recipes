@@ -1,5 +1,7 @@
 <%- include('../partials/header')%>
 
+
+
 <h1>Your Recipe Collection</h1>
 <table id="collection">
     <thead>
@@ -15,6 +17,7 @@
             <td><%= r.title %></td>
             <td><%= r.ingredients %></td>
             <td><%= r.instructions %></td>
+            <td><%= r.comments %></td>
             <td><a href="/recipes/<%=r._id%>">DETAILS</a></td>
         </tr>
     <% }); %>

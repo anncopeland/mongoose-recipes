@@ -1,16 +1,19 @@
 <%- include('../partials/header') %>
 
 <section id='show-page'>
-    <div>Title:</div>
-    <div><%= detail.title %></div><br>
-    <div>Ingredients:</div>
-    <div><%= detail.ingredients %></div><br>
-    <div>Instructions:</div>
-    <div><%= detail.instructions %></div><br>
-    <form action=“/details/<%= detail._id %>/edit” method=“GET”>
-        <button class=“edit-button” type=“submit”>Edit</button>
-    </form>
+        <div>Title:</div>
+        <div><%= detail.title %></div><br>
+        <div>Ingredients:</div>
+        <div><%= detail.ingredients %></div><br>
+        <div>Instructions:</div>
+        <div><%= detail.instructions %></div><br>
+        <form action=“/details/<%= detail._id %>/edit” method=“GET”>
+            <button class=“edit-button” type=“submit”>Edit Recipe</button>
+        </form>
     <h3>Comments</h3>
+    <% detail.comments.forEach(function(c) { %>
+        <%= r %>
+        <% }) %>
         <form id="add-comment-form" action="/recipes" method="POST">
             <label>Add a Commment:</label>
             <input type="text" name="add a comment">
@@ -18,6 +21,5 @@
         </form>
 </section>
 <br><br>
-
 
 <%- include('../partials/footer')%>
