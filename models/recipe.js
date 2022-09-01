@@ -24,7 +24,6 @@ const recipeSchema = new Schema({
     timestamps: true
 })
 
-
 // compiled the schema into a model and exported it
 module.exports = mongoose.model('Recipe', recipeSchema);
 

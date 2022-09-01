@@ -20,6 +20,7 @@ router.get('/:id', recipesCtrl.show);
 // POST /recipes
 router.post('/', recipesCtrl.createRecipe);
 router.delete('/:id', recipesCtrl.deleteRecipe);
-//router.post('/', isLoggedIn, recipesCtrl.createRecipe);
+router.get('/:id/edit', recipesCtrl.editRecipe);
+router.put('/:id', recipesCtrl.updateRecipe);
 
 module.exports = router;

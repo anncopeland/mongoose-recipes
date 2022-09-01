@@ -1,5 +1,5 @@
 const Recipe = require('../models/recipe');
-const { recipeDetails } = require('./details');
+//const recipeDetails = require('./details');
 
 // recipe index
 function recipesIndex(req, res) {
@@ -31,7 +31,7 @@ function show(req, res) {
 function createRecipe(req, res) { 
     const recipe = new Recipe(req.body);
     recipe.save(function(err){
-        if (err) return res.render('recipes/new');
+        if (err) return console.log(err)
         console.log(recipe);
         res.redirect('/recipes');
     })
@@ -43,10 +43,35 @@ function deleteRecipe(req, res) {
     });
 }
 
-module.exports = {
+// this function lets user edit recipe
+function editRecipe(req, res) {
+    Recipe.findOne({_id: req.params.id}, function(err, recipe) {
+      if (err || !recipe) return res.redirect('/recipes');
+      res.render('recipes/edit', {title: "Edit Recipe", recipe});
+    });
+  }
+  
+  // this function lets user update the edited recipe
+  function updateRecipe(req, res) {
+    Recipe.findOneAndUpdate(
+      {_id: req.params.id},
+      // update object with updated properties
+      req.body,
+      // options object with new: true to make sure updated doc is returned
+      {new: true},
+      function(err, recipe) {
+        if (err || !recipe) return res.redirect('/recipes');
+        res.redirect(`/recipes/${recipe._id}`);
+      }
+    );
+  }
+  
+  module.export = {
     recipesIndex,
     newRecipe,
     show,
     createRecipe,
     deleteRecipe,
+    editRecipe,
+    updateRecipe,
 }

@@ -7,8 +7,16 @@
     <div><%= detail.ingredients %></div><br>
     <div>Instructions:</div>
     <div><%= detail.instructions %></div><br>
-    <div>Commments:</div>
-    <div><%= detail.comments %></div><br>
+    <form action=“/recipes/<%= recipe._id %>/edit” method=“GET”>
+        <button class=“edit-button” type=“submit”>Edit</button>
+    </form>
+    <h3>Comments</h3>
+        <form id="add-comment-form" action="/recipes" method="POST">
+            <label>Add a Commment:</label>
+            <input type="text" name="add a comment">
+            <input type="submit" value="Add Comment">
+        </form>
+</section>
 <br><br>
 
 
