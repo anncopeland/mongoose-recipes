@@ -66,7 +66,7 @@ function editRecipe(req, res) {
     );
   }
   
-  module.export = {
+  module.exports = {
     recipesIndex,
     newRecipe,
     show,
