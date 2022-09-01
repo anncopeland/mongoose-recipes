@@ -17,3 +17,11 @@ a {
 .login img {
   height: 30px;
 }
+
+h1 {
+  color: orange;
+  font-family: italic;
+  font-size: 50px;
+  text-shadow: 3px 3px 3px #ababab;
+  text-align: center;
+}

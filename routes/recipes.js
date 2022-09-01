@@ -19,7 +19,7 @@ router.get('/new', recipesCtrl.newRecipe);
 router.get('/:id', recipesCtrl.show);
 // POST /recipes
 router.post('/', recipesCtrl.createRecipe);
-//router.delete('/:id', recipesCtrl.deleteRecipe);
-//router.post('/', isLoggedIn, recipesCtrl.create);
+router.delete('/:id', recipesCtrl.deleteRecipe);
+//router.post('/', isLoggedIn, recipesCtrl.createRecipe);
 
 module.exports = router;

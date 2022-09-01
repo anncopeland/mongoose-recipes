@@ -18,7 +18,7 @@ passport.use(
           if (user) return cb(null, user);
           // We have a new user via OAuth!
           try {
-            user = await User.create({
+            user = await User.create({    // if user does not exist
               name: profile.displayName,
               googleId: profile.id,
               email: profile.emails[0].value,
@@ -33,9 +33,12 @@ passport.use(
     )
   );
 
+// reads data retrieved from google
+// passport creates a session for user
 passport.serializeUser(function(user, cb) {
     cb(null, user._id);
 });
+// writes data
 passport.deserializeUser(function(userId, cb) {
     User.findById(userId).then(function(user) {
       cb(null, user);

@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+
 const commentCtrl = require('../controllers/comments');
 
 // http://localhost:3000/recipes/12345/comments

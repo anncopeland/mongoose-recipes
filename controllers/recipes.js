@@ -1,17 +1,20 @@
 const Recipe = require('../models/recipe');
+const { recipeDetails } = require('./details');
 
 // recipe index
 function recipesIndex(req, res) {
     Recipe.find({},function(err, recipes){
         if (err) return res.redirect('/');
-        res.render('recipes/index', { recipes });
+        res.render('recipes/index', { title: "Southern Comfort", recipes });
     })
 }
 
 // new recipe path so we render it
 function newRecipe(req, res) {
-    let recipe = {id : req.params.id}
-    res.render('recipes/new');
+    //let recipe = {id : req.params.id}
+    res.render('recipes/new', {
+        title: 'Add Recipe'
+    });
 }
 
 // replacing show function
