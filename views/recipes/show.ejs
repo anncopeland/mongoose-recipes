@@ -7,7 +7,7 @@
         <div><%= detail.ingredients %></div><br>
         <div>Instructions:</div>
         <div><%= detail.instructions %></div><br>
-        <form action=“/<%= detail._id %>/edit” method=“GET”>
+        <form action="/recipes/<%= detail._id %>/edit" method="GET">
             <button class=“edit-button” type=“submit”>Edit Recipe</button>
         </form>
         <!-- //above action not working -->
