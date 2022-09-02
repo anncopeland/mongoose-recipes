@@ -36,12 +36,15 @@ function createRecipe(req, res) {
         res.redirect('/recipes');
     })
 } 
-
+// wrap in a conditional that only allows user to delete their recipe
+// use user model
 function deleteRecipe(req, res) {
-    Flight.findByIdAndDelete(req.params._id, function(err) {
+  //if (user && user._id.equals(c.user)) {
+    Recipe.findByIdAndDelete(req.params._id, function(err) {
         res.redirect('/recipes');
     });
-}
+  }
+
 
 // this function lets user edit recipe
 function editRecipe(req, res) {

@@ -28,15 +28,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(methodOverride('_method'));
 
-app.use(passport.initialize());
-//mount the session middleware
 app.use(session({
   secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true
 }));
 
-
+app.use(passport.initialize());
+//mount the session middleware
+app.use(passport.session())
 
 
 // Add this middleware BELOW passport middleware
@@ -51,7 +51,7 @@ app.use('/', indexRouter);
 app.use('/recipes', recipesRouter);
 app.use('/', detailsRouter);
 app.use('/', commentsRouter);
-app.use('/delete', recipesRouter);
+//app.use('/delete', recipesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

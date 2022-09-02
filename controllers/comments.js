@@ -18,11 +18,11 @@ function addComment(req, res) {
 }
 
 function deleteComment(req, res, next) {
-    Movie.findOne({'comments._id': req.params.id}).then(function (recipe) {
-        const comment = movie.comments.id(req.params.id);
-        if (!comment.user.equals(req.user._id)) return res.redirect(`/recipes/${recipe._id}`);
-        review.remove();
-        movie.save().then(function () {
+    Recipe.findOne({'comments._id': req.params.id}).then(function (recipe) {
+        const comment = recipe.comments.id(req.params.id);
+        if (!comment.user === req.user._id) return res.redirect(`/recipes/${recipe._id}`);
+        comment.remove();
+        recipe.save().then(function () {
             res.redirect(`/recipes/${recipe._id}`);
         }).catch(function (error) {
             return next(error);
