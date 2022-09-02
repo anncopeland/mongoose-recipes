@@ -53,8 +53,8 @@ _________________________________________________________________________
 
 ## Hurdles
  
-It was difficult to use google Oauth, for it was very unstable throughtout 
-the project.  
+It was difficult to use google Oauth, for it was very unstable throughtout the project.  The naming comventions when using CRUD was confusing and continued to give me errors.
+I was able to fix some errors, but made this project very time comsuming.  I hope to add more functions at later time.  
 
 __________________________________________________________________________
 
