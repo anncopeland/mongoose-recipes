@@ -27,6 +27,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(methodOverride('_method'));
+
+app.use(passport.initialize());
 //mount the session middleware
 app.use(session({
   secret: process.env.SECRET,
@@ -34,8 +36,8 @@ app.use(session({
   saveUninitialized: true
 }));
 
-app.use(passport.initialize());
-app.use(passport.session());
+
+
 
 // Add this middleware BELOW passport middleware
 app.use(function (req, res, next) {

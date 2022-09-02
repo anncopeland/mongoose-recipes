@@ -65,6 +65,16 @@ function editRecipe(req, res) {
       }
     );
   }
+
+  function newComment(req, res) {
+    Recipe.findById(req.params.id, function(error, recipe) {
+      recipe.comments.push(req.body)
+      recipe.save()
+        .then(
+          res.redirect(`/recipes/${recipe._id}`)
+        )
+    })
+  }
   
   module.exports = {
     recipesIndex,
@@ -74,4 +84,5 @@ function editRecipe(req, res) {
     deleteRecipe,
     editRecipe,
     updateRecipe,
-}
+    newComment,
+  }

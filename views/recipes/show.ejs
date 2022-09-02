@@ -7,16 +7,16 @@
         <div><%= detail.ingredients %></div><br>
         <div>Instructions:</div>
         <div><%= detail.instructions %></div><br>
-        <form action=“/details/<%= detail._id %>/edit” method=“GET”>
+        <form action=“/<%= detail.id %>/edit” method=“GET”>
             <button class=“edit-button” type=“submit”>Edit Recipe</button>
         </form>
     <h3>Comments</h3>
     <% detail.comments.forEach(function(c) { %>
-        <%= r %>
+        <%= c.comment %>
         <% }) %>
-        <form id="add-comment-form" action="/recipes" method="POST">
+        <form id="add-comment-form" action="/recipes/<%= detail._id %>/comments" method="POST">
             <label>Add a Commment:</label>
-            <input type="text" name="add a comment">
+            <input type="text" name="comment">
             <input type="submit" value="Add Comment">
         </form>
 </section>

@@ -22,5 +22,6 @@ router.post('/', recipesCtrl.createRecipe);
 router.delete('/:id', recipesCtrl.deleteRecipe);
 router.get('/:id/edit', recipesCtrl.editRecipe);
 router.put('/:id', recipesCtrl.updateRecipe);
+router.post('/:id/comments', recipesCtrl.newComment);
 
 module.exports = router;
