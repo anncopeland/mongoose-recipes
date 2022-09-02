@@ -3,7 +3,7 @@ https://trello.com/b/cI5fjDfH/southern-comfort-cooking
 =======
 # mongoose-recipes
 
-- (Heroku link here!)
+- https://mongoose-recipes02.herokuapp.com/
 __________________________________________________________________________
 
 The app is intended to showcase some of great Southern style recipes that will deliver great tasting recipes to excite all food lovers!
@@ -47,7 +47,7 @@ _________________________________________________________________________
 
 ## Wins
 
-I was great practice to be able to utilize MongoDB and Mongoose.
+It was great practice to be able to utilize MongoDB and Mongoose.
 
 _________________________________________________________________________
 
@@ -59,8 +59,8 @@ I was able to fix some errors, but made this project very time comsuming.  I hop
 __________________________________________________________________________
 
 ## Next Steps
-- [x] Add sign up.
-- [x] Add CSS Flex-box to the content.
+- [ ] Add sign up.
+- [ ] Add CSS Flex-box to the content.
 __________________________________________________________________________
 
 ## Credits
