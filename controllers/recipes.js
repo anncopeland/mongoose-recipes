@@ -38,7 +38,7 @@ function createRecipe(req, res) {
 } 
 
 function deleteRecipe(req, res) {
-    Flight.findByIdAndDelete(req.params.id, function(err) {
+    Flight.findByIdAndDelete(req.params._id, function(err) {
         res.redirect('/recipes');
     });
 }
@@ -61,7 +61,7 @@ function editRecipe(req, res) {
       {new: true},
       function(err, recipe) {
         if (err || !recipe) return res.redirect('/recipes');
-        res.redirect(`/recipes/${recipe._id}`);
+        res.redirect(`/recipes/${recipe.id}`);
       }
     );
   }
